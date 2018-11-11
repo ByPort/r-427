@@ -1,22 +1,40 @@
 @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
-body
+html, body, main
+    height: 100%;
+
+.app
+    min-height: 100%;
     //background-color: #f0f0f0
 
 .navbar {
     border-radius: 0 !important;
     border: none !important;
+    margin-bottom: 0;
+    background-color: transparent;
+    font-size: 1.5em;
+    .container {
+      width: 100%;
+    }
 }
 
-.navbar-brand 
+.navbar-brand
     font-weight: bold;
-    color: #fff !important
+    color: #fff !important;
+
+.navbar-nav
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
 .pre-header {
     background-color: #222;
     padding-top: 20px;
     color: #9d9d9d !important;
 }
+
+.content
+    background-color: #fff;
 
 carousel-item(height) {
     .item {
@@ -26,7 +44,7 @@ carousel-item(height) {
             max-height: 100% !important;
             max-width: 100% !important;
         }
-    } 
+    }
 }
 
 .carousel-main {
@@ -38,7 +56,7 @@ carousel-item(height) {
 
 .carousel-secondary {
     width: 100%;
-    carousel-item(800px);  
+    carousel-item(800px);
 }
 
 .flex {
@@ -46,15 +64,15 @@ carousel-item(height) {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .page-header h1 {
-    font-size: 25px !important;    
+    font-size: 25px !important;
 }
 
 .img-mapper-tooltip {
-    position: absolute;    
+    position: absolute;
 }
 
 .modal-img {
@@ -69,29 +87,25 @@ carousel-item(height) {
     animation-timing-function: ease-in-out;
 }
 @keyframes blink {
-    0% { 
+    0% {
         background-color: rgba(255,255,255,1)
     }
-    100% { 
+    100% {
         background-color: rgba(255,255,0,.4)
     }
 }
 
 .maped-img {
-    width: 100%;    
-}
-
-main {
-    margin-bottom: 50px;    
+    width: 100%;
 }
 
 .cable {
-    height: 120px !important;    
+    height: 120px !important;
 }
 
 .faq {
     p, li {
-        font-size: 18px !important;    
+        font-size: 18px !important;
     }
     img {
         display: block;
@@ -106,5 +120,11 @@ main {
     }
     img {
         max-height: 100px;
-    }    
+    }
 }
+
+.app
+    background-image: url(assets/OR4EJM0.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;

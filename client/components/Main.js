@@ -7,7 +7,10 @@ import {
     Media,
     Tooltip,
     Modal,
-    Grid
+    Grid,
+    Navbar,
+    Nav,
+    NavItem,
 } from 'react-bootstrap'
 import { navigate } from '../actions'
 import ImageMapper from '../ImageMapper'
@@ -45,7 +48,7 @@ class Main extends React.Component {
         });
     }
 
-    render() { 
+    render() {
         const map = {
             name: "my-map",
             areas: [
@@ -80,30 +83,16 @@ class Main extends React.Component {
         ];
         return (
             <div>
-                <PageHeader>Основная информация</PageHeader>
-                <div onMouseMove={this.mouseMove} >
-                    <h4>
-                        <strong>РАДИОРЕЛЕЙНАЯ СТАНЦИЯ</strong> предназначена для 
-                        организации радиорелейных линий (сетей) связи, обеспечения 
-                        привязки полевых узлов связи к узлам связи стационарной и 
-                        опорной сети связи Вооруженных Сил, а также к сети электросвязи 
-                        общего пользования.
-                    </h4>
-                    <hr />
-                    <ImageMapper                                 
-                        src='img/ppu.jpg' map={map}
-                        width={1200}
-                        onMouseEnter={(e) => this.setState({ tooltipVisible: true, tooltipText: e.description })}
-                        onMouseLeave={() => this.setState({ tooltipVisible: false })}
-                        onClick={(e) => this.props.navigate('DOCS', 4, e.anchor)}
-                    />
-                    <Tooltip 
-                        className='img-mapper-tooltip' 
-                        style={{ display: this.state.tooltipVisible ? 'block' : 'none', top: this.state.mY, left: this.state.mX + 20 }} 
-                        placement="right" className="in" id="tooltip-right"
-                    >
-                        {this.state.tooltipText}
-                    </Tooltip>
+                <PageHeader>Главное меню</PageHeader>
+                <div>
+                    <Navbar>
+                        <Nav>
+                            <NavItem active={this.props.currentPage.pageName == 'DOCS'} eventKey={1} onClick={() => this.props.navigate('DOCS')}>Теория</NavItem>
+                            <NavItem active={this.props.currentPage.pageName == 'LEARNING'} eventKey={2} onClick={() => this.props.navigate('LEARNING')}>Обучение</NavItem>
+                            <NavItem active={this.props.currentPage.pageName == 'TESTS'} eventKey={3} onClick={() => this.props.navigate('TESTS', 0)}>Контроль знаний</NavItem>
+                            <NavItem active={this.props.currentPage.pageName == 'ABOUT'} eventKey={4} onClick={() => this.props.navigate('ABOUT')}>Помощь</NavItem>
+                        </Nav>
+                    </Navbar>
                 </div>
                 <PageHeader>Галерея</PageHeader>
                 <Carousel slide={this.state.modalOpen} className='carousel-main'>
@@ -137,7 +126,7 @@ class Main extends React.Component {
                     </Modal.Body>
                 </Modal>
             </div>
-        ); 
+        );
     }
 }
 

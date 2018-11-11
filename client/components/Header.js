@@ -33,9 +33,7 @@ class Header extends React.Component {
                                     <img width={80} height={80} style={{display:'inline'}} src="img/bsuir.png" alt="Image" />
                                 </Media.Left>
                                 <Media.Body>
-                                <p>Учреждение образования <br/>
-                                «Белорусский государственный университет информатики и радиоэлектроники» <br/>
-                                Военный факультет</p>
+                                    <h1>Программа для обучения специалистов связи устройству и эксплуатации АТС ФМ</h1>
                                 </Media.Body>
                                 <Media.Right>
                                     <img width={80} height={80} style={{display:'inline'}} src="img/mf.png" alt="Image" />
@@ -44,33 +42,6 @@ class Header extends React.Component {
                         </Row>
                     </Grid>
                 </div>
-                <Navbar inverse>
-                    <Navbar.Header>
-                        <Navbar.Brand>
-                            <a href='#' onClick={() => this.props.navigate('MAIN')}>Радиорелейная станция Р-427</a>
-                        </Navbar.Brand>
-                    </Navbar.Header>
-                    <Nav>
-                        <NavDropdown active={this.props.currentPage.pageName == 'DOCS'} eventKey={1} title="Теория" id="basic-nav-dropdown">
-                            {docsCategoryNames.map((e,i) => {
-                                return <MenuItem key={i} onClick={() => this.props.navigate('DOCS', i)} eventKey={1 + (i + 1) / 10}>{e}</MenuItem>
-                            })}
-                            <MenuItem target='_blank' href='r1.pdf'>Руководство по экспулатации</MenuItem>
-                            <MenuItem target='_blank' href='r2.pdf'>Руководство оператора РРС</MenuItem>
-                        </NavDropdown>
-                        <NavDropdown active={this.props.currentPage.pageName == 'FAQ'} eventKey={3} title="Практика" id="basic-nav-dropdown">
-                            <MenuItem onClick={() => this.props.navigate('FAQ')} eventKey={2.1}>Порядок работы</MenuItem>
-                            <MenuItem href='RStation.exe'>Скачать программу</MenuItem>
-                        </NavDropdown>
-                        <NavDropdown active={this.props.currentPage.pageName == 'TESTS'} eventKey={3} title="Контроль знаний" id="basic-nav-dropdown">
-                            <MenuItem onClick={() => this.props.navigate('TESTS', 0)} eventKey={3.1}>Тест по теории</MenuItem>
-                            <MenuItem onClick={() => this.props.navigate('TESTS', 1)} eventKey={3.2}>Тест по настройке оборудования</MenuItem>
-                            {/* <MenuItem onClick={() => this.props.navigate('TESTS', 2)} eventKey={3.3}>Комплексный тест</MenuItem> */}
-                            <MenuItem onClick={() => this.props.navigate('RESULTS')} eventKey={3.4}>Архив результатов</MenuItem>
-                        </NavDropdown>
-                        <NavItem active={this.props.currentPage.pageName == 'ABOUT'} eventKey={4} onClick={() => this.props.navigate('ABOUT')}>О программе</NavItem>
-                    </Nav>
-                </Navbar>
             </div>
         );
     }

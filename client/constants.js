@@ -16,7 +16,8 @@ export const pages = {
     TESTS: 'TESTS',
     ABOUT: 'ABOUT',
     RESULTS: 'RESULTS',
-    FAQ: 'FAQ'
+    FAQ: 'FAQ',
+    LEARNING: 'LEARNING',
 }
 
-export const docsCategoryNames = ['Технические характеристики', 'Применяемые кабели', 'Варианты применения', 'Состав изделия', 'Устройство', 'Требования безопасности']
+export const docsCategoryNames = ['Назначение и состав', 'Тактико-технические данные', 'Описание конструкции', 'Программное обеспечение', 'Принцип работы']

@@ -2,9 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {
     Nav,
-    NavItem
+    NavItem,
+    Button,
 } from 'react-bootstrap'
 import * as docs from '../docs'
+import { navigate } from '../actions'
 import { docsCategoryNames as categoryNames } from '../constants';
 
 require('smoothscroll-polyfill').polyfill();
@@ -34,9 +36,10 @@ class Docs extends React.Component {
         return [docs.tp, docs.cables, docs.application, docs.composition, <docs.structure />, docs.safety][ID] || 'succ';
     }
 
-    render() { 
+    render() {
         return (
             <div>
+                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
                 <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
                     {categoryNames.map((e,i) => {
                         return <NavItem href='#' title={e} key={i} eventKey={i}>{e}</NavItem>
@@ -44,10 +47,15 @@ class Docs extends React.Component {
                 </Nav>
                 {this.showDocs(this.state.activeKey)}
             </div>
-        ); 
+        );
     }
 }
 
 export default connect(
-    state => state
+    state => state,
+    dispatch => ({
+        navigate(pageName, subPageName, anchor) {
+            dispatch(navigate(pageName, subPageName, anchor))
+        }
+    })
 )(Docs);

@@ -143,6 +143,7 @@ class Tests extends React.Component {
         const testNames = ['Тест по теории', 'Тест по настройке оборудования', 'Комплексный тест']
         if (this.props.currentUser.status == userStatus.LOGGED_OUT) return (
             <div>
+                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
                 <PageHeader>{testNames[this.props.testID] + ' '}<small>Регистрация</small></PageHeader>
                 <FormGroup controlId="name">
                     <FormControl
@@ -169,9 +170,9 @@ class Tests extends React.Component {
                 </ButtonToolbar>
                 <hr />
                 <ButtonToolbar>
-                    <Button 
-                    bsStyle='primary' 
-                    disabled={this.validateInput()} 
+                    <Button
+                    bsStyle='primary'
+                    disabled={this.validateInput()}
                     onClick={this.startTest}>
                         Начать тестирование
                     </Button>
@@ -189,6 +190,7 @@ class Tests extends React.Component {
             }
             return (
             <div>
+                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
                 <PageHeader>{testNames[this.props.testID] + ' '}<small>Времени осталось: {secToMin(this.maxTime - this.state.elapsedTime.toFixed())}</small></PageHeader>
                 <Panel key={this.state.question} header={<h3>{`${this.state.question + 1}. ${this.props.questions[this.props.testID][this.props.currentUser.variant][this.state.question].q}`}</h3>}>
                     <ButtonToolbar>
@@ -206,12 +208,13 @@ class Tests extends React.Component {
         )}
         else if(this.props.currentUser.status == userStatus.FINISHED) return (
             <div>
+                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
                 <PageHeader>
                     {'Результаты '}
                     <small>
-                        {this.props.currentUser.name}, 
-                        гр. {this.props.currentUser.group}, 
-                        вариант №{this.props.currentUser.variant + 1}, 
+                        {this.props.currentUser.name},
+                        гр. {this.props.currentUser.group},
+                        вариант №{this.props.currentUser.variant + 1},
                         затраченное время {secToMin(this.state.elapsedTime.toFixed())}
                     </small>
                 </PageHeader>
@@ -242,11 +245,11 @@ class Tests extends React.Component {
                     onClick={() => this.props.saveResults(this.props.currentUser, this.state.elapsedTime, this.props.testID, new Date())}>
                         Сохранить результат
                     </Button>
-                    <Button  
+                    <Button
                     onClick={this.startTest}>
                         Пройти заново
                     </Button>
-                    <Button  
+                    <Button
                     onClick={() => { this.props.navigate('TESTS', this.props.testID) }}>
                         Вернуться назад
                     </Button>
@@ -257,18 +260,23 @@ class Tests extends React.Component {
                 </ButtonToolbar>
             </div>
         );
-        else return <h1>Неизвестная ошибка.</h1>
+        else return (
+            <div>
+                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
+                <h1>Неизвестная ошибка.</h1>
+            </div>
+        );
     }
 }
 
 export default connect(
     state => state,
     dispatch => ({
-        login(name, group, variant) { 
+        login(name, group, variant) {
             dispatch(login(name, group, variant));
             console.log(name, group, variant);
         },
-        validateAnswers(testID, answers) { 
+        validateAnswers(testID, answers) {
             dispatch(validateAnswers(testID, answers))
         },
         setTime(value) {

@@ -1,7 +1,8 @@
 import React from 'react'
 import {
     Grid,
-    Row
+    Row,
+    Col,
 } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import Main from './Main';
@@ -10,6 +11,7 @@ import Tests from './Tests';
 import Results from './Results'
 import About from './About';
 import FAQ from './FAQ'
+import Learning from './Learning'
 import { questions } from '../questions'
 
 class Content extends React.Component {
@@ -25,16 +27,19 @@ class Content extends React.Component {
             case 'DOCS': return <Docs subPageName={currentPage.subPageName} anchor={currentPage.anchor} />;
             case 'TESTS': return <Tests testID={currentPage.subPageName} questions={questions} />;
             case 'ABOUT': return <About />;
-            case 'FAQ': return <FAQ />
+            case 'FAQ': return <FAQ />;
+            case 'LEARNING': return <Learning />;
             default: return <Main />
         }
     }
 
     render() {
         return (
-            <Grid>
+            <Grid className="content">
                 <Row>
-                    {this.switchContent(this.props.currentPage)}
+                    <Col xs={1} sm={1} md={1} lg={1}>Sidebar</Col>
+                    <Col xs={10} sm={10} md={10} ls={10}>{this.switchContent(this.props.currentPage)}</Col>
+                    <Col xs={1} sm={1} md={1} ls={1}>Sidebar</Col>
                 </Row>
             </Grid>
         );
