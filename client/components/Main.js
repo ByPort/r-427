@@ -11,9 +11,13 @@ import {
     Navbar,
     Nav,
     NavItem,
+    Row,
+    Col,
 } from 'react-bootstrap'
 import { navigate } from '../actions'
 import ImageMapper from '../ImageMapper'
+import Header from './Header'
+import Footer from './Footer'
 import '../assets/ppu.jpg';
 import '../assets/g1.jpg';
 import '../assets/g2.jpg';
@@ -83,48 +87,54 @@ class Main extends React.Component {
         ];
         return (
             <div>
-                <PageHeader>Главное меню</PageHeader>
-                <div>
-                    <Navbar>
-                        <Nav>
-                            <NavItem active={this.props.currentPage.pageName == 'DOCS'} eventKey={1} onClick={() => this.props.navigate('DOCS')}>Теория</NavItem>
-                            <NavItem active={this.props.currentPage.pageName == 'LEARNING'} eventKey={2} onClick={() => this.props.navigate('LEARNING')}>Обучение</NavItem>
-                            <NavItem active={this.props.currentPage.pageName == 'TESTS'} eventKey={3} onClick={() => this.props.navigate('TESTS', 0)}>Контроль знаний</NavItem>
-                            <NavItem active={this.props.currentPage.pageName == 'ABOUT'} eventKey={4} onClick={() => this.props.navigate('ABOUT')}>Помощь</NavItem>
-                        </Nav>
-                    </Navbar>
-                </div>
-                <PageHeader>Галерея</PageHeader>
-                <Carousel slide={this.state.modalOpen} className='carousel-main'>
-                    {new Array(10).fill(0).map((e,i) => {
-                        return (
-                            <Carousel.Item key={i} onClick={() =>this.toggleModal(i)}>
-                                <div className='flex'>
-                                    <img alt="800x600" src={`img/g${i + 1}.jpg`} />
-                                </div>
-                            </Carousel.Item>
-                        );
-                    })}
-                </Carousel>
-                <Modal bsSize='lg' show={this.state.modalOpen} onHide={() => this.toggleModal(0)}>
-                    <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title-lg">{photoCaptions[this.state.activeIndex]}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Carousel indicators={false} onSelect={() => this.setState({activeIndex: this.state.activeIndex < 9 ? this.state.activeIndex + 1 : 0})} activeIndex={this.state.activeIndex} slide={false} className='carousel-secondary'>
-                            {new Array(10).fill(0).map((e,i) => {
-                                return (
-                                    <Carousel.Item className='text-center' key={i}>
-                                        <div className='flex'>
-                                            <img alt="800x600" src={`img/g${i + 1}.jpg`} />
-                                        </div>
-                                    </Carousel.Item>
-                                );
-                            })}
-                        </Carousel>
-                        {/* <img className='modal-img' src={`img/g${this.state.activeIndex + 1}.jpg`} /> */}
-                    </Modal.Body>
-                </Modal>
+                <Header />
+                <Row>
+                    <Col xs={1} sm={1} md={1} lg={1} className="sidebar">Sidebar</Col>
+                    <Col xs={10} sm={10} md={10} ls={10}>
+                        <div>
+                            <PageHeader>Главное меню</PageHeader>
+                            <div>
+                                <Navbar>
+                                    <Nav>
+                                        <NavItem active={this.props.currentPage.pageName == 'DOCS'} eventKey={1} onClick={() => this.props.navigate('DOCS')}>Теория</NavItem>
+                                        <NavItem active={this.props.currentPage.pageName == 'LEARNING'} eventKey={2} onClick={() => this.props.navigate('LEARNING')}>Обучение</NavItem>
+                                        <NavItem active={this.props.currentPage.pageName == 'TESTS'} eventKey={3} onClick={() => this.props.navigate('TESTS', 0)}>Контроль знаний</NavItem>
+                                        <NavItem active={this.props.currentPage.pageName == 'ABOUT'} eventKey={4} onClick={() => this.props.navigate('ABOUT')}>Помощь</NavItem>
+                                    </Nav>
+                                </Navbar>
+                            </div>
+                            <PageHeader>Галерея</PageHeader>
+                            <div className="gallery">
+                                {new Array(10).fill(0).map((e, i) => (
+                                    <div className="gallery-item thumbnail" key={i}>
+                                        <img src={`img/g${i + 1}.jpg`} />
+                                    </div>
+                                ))}
+                            </div>
+                            <Modal bsSize='lg' show={this.state.modalOpen} onHide={() => this.toggleModal(0)}>
+                                <Modal.Header closeButton>
+                                    <Modal.Title id="contained-modal-title-lg">{photoCaptions[this.state.activeIndex]}</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <Carousel indicators={false} onSelect={() => this.setState({activeIndex: this.state.activeIndex < 9 ? this.state.activeIndex + 1 : 0})} activeIndex={this.state.activeIndex} slide={false} className='carousel-secondary'>
+                                        {new Array(10).fill(0).map((e,i) => {
+                                            return (
+                                                <Carousel.Item className='text-center' key={i}>
+                                                    <div className='flex'>
+                                                        <img alt="800x600" src={`img/g${i + 1}.jpg`} />
+                                                    </div>
+                                                </Carousel.Item>
+                                            );
+                                        })}
+                                    </Carousel>
+                                    {/* <img className='modal-img' src={`img/g${this.state.activeIndex + 1}.jpg`} /> */}
+                                </Modal.Body>
+                            </Modal>
+                            <Footer />
+                        </div>
+                    </Col>
+                    <Col xs={1} sm={1} md={1} ls={1} className="sidebar">Sidebar</Col>
+                </Row>
             </div>
         );
     }

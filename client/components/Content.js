@@ -36,11 +36,7 @@ class Content extends React.Component {
     render() {
         return (
             <Grid className="content">
-                <Row>
-                    <Col xs={1} sm={1} md={1} lg={1}>Sidebar</Col>
-                    <Col xs={10} sm={10} md={10} ls={10}>{this.switchContent(this.props.currentPage)}</Col>
-                    <Col xs={1} sm={1} md={1} ls={1}>Sidebar</Col>
-                </Row>
+                {this.switchContent(this.props.currentPage)}
             </Grid>
         );
     }

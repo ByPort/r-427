@@ -24,25 +24,19 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className='pre-header'>
-                    <Grid>
-                        <Row className="text-center">
-                            <Media>
-                                <Media.Left>
-                                    <img width={80} height={80} style={{display:'inline'}} src="img/bsuir.png" alt="Image" />
-                                </Media.Left>
-                                <Media.Body>
-                                    <h1>Программа для обучения специалистов связи устройству и эксплуатации АТС ФМ</h1>
-                                </Media.Body>
-                                <Media.Right>
-                                    <img width={80} height={80} style={{display:'inline'}} src="img/mf.png" alt="Image" />
-                                </Media.Right>
-                            </Media>
-                        </Row>
-                    </Grid>
-                </div>
-            </div>
+            <Row className="text-center">
+                <Media>
+                    <Media.Left>
+                        <img width={80} height={80} style={{display:'inline'}} src="img/bsuir.png" alt="Image" className="main-image" />
+                    </Media.Left>
+                    <Media.Body>
+                        <h1 className="title">Программа для обучения специалистов связи<br />устройству и эксплуатации АТС ФМ</h1>
+                    </Media.Body>
+                    <Media.Right>
+                        <img width={80} height={80} style={{display:'inline'}} src="img/mf.png" alt="Image" className="main-image" />
+                    </Media.Right>
+                </Media>
+            </Row>
         );
     }
 }

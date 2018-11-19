@@ -13,9 +13,7 @@ class App extends React.Component {
         return (
             <Provider store={this.props.store}>
                 <div className="app">
-                    <Header />
                     <Content />
-                    <Footer />
                 </div>
             </Provider>
         );

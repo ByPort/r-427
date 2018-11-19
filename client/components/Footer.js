@@ -24,14 +24,8 @@ export default class Header extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className='pre-header'>
-                    <Grid>
-                        <Row className="text-center">
-                            <p>&copy; Все права защищены, Военный факультет в УО "БГУИР"</p>
-                        </Row>
-                    </Grid>
-                </div>
+            <div className="text-center footer">
+                <p>&copy; Все права защищены, Военный факультет в УО "БГУИР"</p>
             </div>
         );
     }
