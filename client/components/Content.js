@@ -12,6 +12,13 @@ import Results from './Results'
 import About from './About';
 import FAQ from './FAQ'
 import Learning from './Learning'
+import Purpose from './Purpose'
+import Tacitcs from './Tactics'
+import Description from './Description'
+import Software from './Software'
+import Work from './Work'
+import TechData from './TechData'
+import TechDescription from './TechDescription'
 import { questions } from '../questions'
 
 class Content extends React.Component {
@@ -29,6 +36,13 @@ class Content extends React.Component {
             case 'ABOUT': return <About />;
             case 'FAQ': return <FAQ />;
             case 'LEARNING': return <Learning />;
+            case 'PURPOSE': return <Purpose />;
+            case 'TACTICS': return <Tacitcs />;
+            case 'DESCRIPTION': return <Description />;
+            case 'SOFTWARE': return <Software />;
+            case 'WORK': return <Work />;
+            case 'TECHDATA': return <TechData />;
+            case 'TECHDESCRIPTION': return <TechDescription />;
             default: return <Main />
         }
     }

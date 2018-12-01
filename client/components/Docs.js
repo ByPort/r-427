@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {
     Nav,
     NavItem,
+    Navbar,
     Button,
 } from 'react-bootstrap'
 import * as docs from '../docs'
@@ -40,12 +41,19 @@ class Docs extends React.Component {
         return (
             <div>
                 <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
-                <Nav bsStyle="tabs" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-                    {categoryNames.map((e,i) => {
-                        return <NavItem href='#' title={e} key={i} eventKey={i}>{e}</NavItem>
-                    })}
-                </Nav>
-                {this.showDocs(this.state.activeKey)}
+                <div>
+                    <Navbar>
+                        <Nav>
+                            <NavItem eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Назначение и состав</NavItem>
+                            <NavItem eventKey={2} onClick={() => this.props.navigate('TACTICS')}>Тактико-технические характеристики</NavItem>
+                            <NavItem eventKey={3} onClick={() => this.props.navigate('DESCRIPTION')}>Описание конструкции</NavItem>
+                            <NavItem eventKey={4} onClick={() => this.props.navigate('SOFTWARE')}>Программное обеспечение</NavItem>
+                            <NavItem eventKey={5} onClick={() => this.props.navigate('WORK')}>Принцип работы</NavItem>
+                            <NavItem eventKey={6} onClick={() => this.props.navigate('TECHDATA')}>Технические данные</NavItem>
+                            <NavItem eventKey={7} onClick={() => this.props.navigate('TECHDESCRIPTION')}>Техническое описание</NavItem>
+                        </Nav>
+                    </Navbar>
+                </div>
             </div>
         );
     }

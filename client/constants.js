@@ -18,6 +18,13 @@ export const pages = {
     RESULTS: 'RESULTS',
     FAQ: 'FAQ',
     LEARNING: 'LEARNING',
+    PURPOSE: 'PURPOSE',
+    TACTICS: 'TACTICS',
+    DESCRIPTION: 'DESCRIPTION',
+    SOFTWARE: 'SOFTWARE',
+    WORK: 'WORK',
+    TECHDATA: 'TECHDATA',
+    TECHDESCRIPTION: 'TECHDESCRIPTION',
 }
 
 export const docsCategoryNames = ['Назначение и состав', 'Тактико-технические данные', 'Описание конструкции', 'Программное обеспечение', 'Принцип работы']

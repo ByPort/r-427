@@ -3,9 +3,9 @@ import { userStatus, answerStatus, pages } from './constants'
 import { answerMap } from './questions'
 import { loadScore } from './actions'
 
-const defaultUserState = { 
-    name: null, 
-    group: null, 
+const defaultUserState = {
+    name: null,
+    group: null,
     status: userStatus.LOGGED_OUT,
     variant: null,
     elapsedTime: 0,
@@ -13,18 +13,18 @@ const defaultUserState = {
 }
 
 const currentPage = (state = { pageName: pages.MAIN, subPageName: null }, action) => ({
-    NAVIGATE() { 
+    NAVIGATE() {
         return Object.assign(
-            {}, 
+            {},
             { pageName: pages[action.pageName], subPageName: action.subPageName, anchor: action.anchor }
-        ) 
+        )
     }
 }[action.type] || (() => state))();
 
 const currentUser = (state = defaultUserState, action) => ({
-    LOGIN() { 
+    LOGIN() {
         return Object.assign(
-            {}, 
+            {},
             state,
             { name: action.name, group: action.group, variant: action.variant, status: userStatus.WORKING, elapsedTime: 0 }
         );
