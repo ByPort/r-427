@@ -40,17 +40,21 @@ class Docs extends React.Component {
     render() {
         return (
             <div>
-                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
                 <div>
                     <Navbar>
                         <Nav>
-                            <NavItem eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Назначение и состав</NavItem>
-                            <NavItem eventKey={2} onClick={() => this.props.navigate('TACTICS')}>Тактико-технические характеристики</NavItem>
-                            <NavItem eventKey={3} onClick={() => this.props.navigate('DESCRIPTION')}>Описание конструкции</NavItem>
-                            <NavItem eventKey={4} onClick={() => this.props.navigate('SOFTWARE')}>Программное обеспечение</NavItem>
-                            <NavItem eventKey={5} onClick={() => this.props.navigate('WORK')}>Принцип работы</NavItem>
-                            <NavItem eventKey={6} onClick={() => this.props.navigate('TECHDATA')}>Технические данные</NavItem>
-                            <NavItem eventKey={7} onClick={() => this.props.navigate('TECHDESCRIPTION')}>Техническое описание</NavItem>
+                            <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                        </Nav>
+                    </Navbar>
+                </div>
+                <div>
+                    <Navbar>
+                        <Nav className="docs-nav">
+                            <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Назначение</NavItem>
+                            <NavItem className="docs-item" eventKey={2} onClick={() => this.props.navigate('TACTICS')}>Тактико-технические характеристики</NavItem>
+                            <NavItem className="docs-item" eventKey={3} onClick={() => this.props.navigate('DESCRIPTION')}>Состав</NavItem>
+                            <NavItem className="docs-item" eventKey={4} onClick={() => this.props.navigate('SOFTWARE')}>Программное обеспечение</NavItem>
+                            <NavItem className="docs-item" eventKey={5} onClick={() => this.props.navigate('WORK')}>Принцип работы</NavItem>
                         </Nav>
                     </Navbar>
                 </div>

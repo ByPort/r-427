@@ -104,13 +104,17 @@ class Main extends React.Component {
                                 </Navbar>
                             </div>
                             <PageHeader>Галерея</PageHeader>
-                            <div className="gallery">
+                            <div className="carousel slide multi-item-carousel" id="theCarousel">
+                            <div className="carousel-inner">
                                 {new Array(10).fill(0).map((e, i) => (
-                                    <div className="gallery-item thumbnail" key={i}>
-                                        <img src={`img/g${i + 1}.jpg`} />
+                                    <div key={i} className={i == 0 ? ' item active' : 'item'}>
+                                      <div className="col-xs-4"><a href={'#' + i}><img src={`img/g${i + 1}.jpg`} className="img-responsive"/></a></div>
                                     </div>
                                 ))}
                             </div>
+                            <a className="left carousel-control" href="#theCarousel" data-slide="prev"><i className="glyphicon glyphicon-chevron-left"></i></a>
+                            <a className="right carousel-control" href="#theCarousel" data-slide="next"><i className="glyphicon glyphicon-chevron-right"></i></a>
+                          </div>
                             <Modal bsSize='lg' show={this.state.modalOpen} onHide={() => this.toggleModal(0)}>
                                 <Modal.Header closeButton>
                                     <Modal.Title id="contained-modal-title-lg">{photoCaptions[this.state.activeIndex]}</Modal.Title>

@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import {
     PageHeader,
     Button,
+    Nav,
+    NavItem,
+    Navbar,
 } from 'react-bootstrap';
 import { navigate } from '../actions'
 import '../assets/f1.jpg';
@@ -39,7 +42,11 @@ import '../assets/f31.jpg';
 
 const Learning = (props) => (
     <div className='faq'>
-        <Button bsStyle="link" onClick={() => props.navigate('MAIN')}>Вернуться в главное меню</Button>
+        <Navbar>
+            <Nav>
+                <NavItem eventKey={1} onClick={() => props.navigate('MAIN')}>Главное меню</NavItem>
+            </Nav>
+        </Navbar>
         <PageHeader>Порядок работы</PageHeader>
         <p>Перед началом работы на радиорелейной станции необходимо ознакомиться с принципом работы Р-427, а также требованиями безопасности в целях снижения риска возникновения несчастных случаев и выхода из строя оборудования станции.
         Упомянутая информация представлена как в данной обучающей программе, так и в официальных руководствах от разработчика радиорелейной станции, которые можно изучить в разделе «Практика». В данном подразделе представлено описание порядка работы на радиорелейной станции Р-427 с уточнениями касательно особенностей обучающей программы.</p>

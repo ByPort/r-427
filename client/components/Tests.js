@@ -9,7 +9,10 @@ import {
     Button,
     Panel,
     Table,
-    PageHeader
+    PageHeader,
+    Nav,
+    NavItem,
+    Navbar,
 } from 'react-bootstrap';
 import secToMin from 'sec-to-min'
 import { saveResults, validateAnswers, login, setTime, navigate, retry } from '../actions';
@@ -143,7 +146,11 @@ class Tests extends React.Component {
         const testNames = ['Тест по теории', 'Тест по настройке оборудования', 'Комплексный тест']
         if (this.props.currentUser.status == userStatus.LOGGED_OUT) return (
             <div>
-                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
+                <Navbar>
+                    <Nav>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                    </Nav>
+                </Navbar>
                 <PageHeader>{testNames[this.props.testID] + ' '}<small>Регистрация</small></PageHeader>
                 <FormGroup controlId="name">
                     <FormControl
@@ -190,7 +197,11 @@ class Tests extends React.Component {
             }
             return (
             <div>
-                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
+                <Navbar>
+                    <Nav>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                    </Nav>
+                </Navbar>
                 <PageHeader>{testNames[this.props.testID] + ' '}<small>Времени осталось: {secToMin(this.maxTime - this.state.elapsedTime.toFixed())}</small></PageHeader>
                 <Panel key={this.state.question} header={<h3>{`${this.state.question + 1}. ${this.props.questions[this.props.testID][this.props.currentUser.variant][this.state.question].q}`}</h3>}>
                     <ButtonToolbar>
@@ -208,7 +219,11 @@ class Tests extends React.Component {
         )}
         else if(this.props.currentUser.status == userStatus.FINISHED) return (
             <div>
-                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
+                <Navbar>
+                    <Nav>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                    </Nav>
+                </Navbar>
                 <PageHeader>
                     {'Результаты '}
                     <small>
@@ -218,7 +233,7 @@ class Tests extends React.Component {
                         затраченное время {secToMin(this.state.elapsedTime.toFixed())}
                     </small>
                 </PageHeader>
-                <Table responsive striped bordered condensed hover>
+                <Table responsive bordered condensed>
                     <thead>
                         <tr>
                             <th>№</th>
@@ -241,11 +256,6 @@ class Tests extends React.Component {
                 <h3>Ваша отметка: {Math.round(this.props.currentUser.result.filter(e => e == 'TRUE').length / this.props.currentUser.result.length * 10)}</h3>
                 <ButtonToolbar>
                     <Button
-                    bsStyle='primary'
-                    onClick={() => this.props.saveResults(this.props.currentUser, this.state.elapsedTime, this.props.testID, new Date())}>
-                        Сохранить результат
-                    </Button>
-                    <Button
                     onClick={this.startTest}>
                         Пройти заново
                     </Button>
@@ -262,7 +272,11 @@ class Tests extends React.Component {
         );
         else return (
             <div>
-                <Button bsStyle="link" onClick={() => this.props.navigate('MAIN')}>Вернуться в главное меню</Button>
+                <Navbar>
+                    <Nav>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                    </Nav>
+                </Navbar>
                 <h1>Неизвестная ошибка.</h1>
             </div>
         );

@@ -3,12 +3,19 @@ import { connect } from 'react-redux'
 import {
     PageHeader,
     Button,
+    Navbar,
+    Nav,
+    NavItem,
 } from 'react-bootstrap';
 import { navigate } from '../actions'
 
 const About = (props) => (
     <div>
-        <Button bsStyle="link" onClick={() => props.navigate('MAIN')}>Вернуться в главное меню</Button>
+        <Navbar>
+            <Nav>
+                <NavItem eventKey={1} onClick={() => props.navigate('MAIN')}>Главное меню</NavItem>
+            </Nav>
+        </Navbar>
         <PageHeader>О программе</PageHeader>
         <p>Данный программный продукт предназначен для подготовки обучающихся к самостоятельной работе на радиорелейной станции Р-427.</p>
         <ul>
