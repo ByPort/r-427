@@ -169,9 +169,9 @@ class Tests extends React.Component {
                     />
                 </FormGroup>
                 <ButtonToolbar>
-                    <ToggleButtonGroup type="radio" name="variant" defaultValue={null}>
+                    <ToggleButtonGroup onChange={this.handleChange} type="radio" name="variant" defaultValue={null}>
                         {this.props.questions[this.props.testID].map((e,i) => {
-                            return <ToggleButton onClick={() => this.handleChange(e)} key={i} value={i}>{`Вариант ${i + 1}`}</ToggleButton>
+                            return <ToggleButton key={i} value={i}>{`Вариант ${i + 1}`}</ToggleButton>
                         })}
                     </ToggleButtonGroup>
                 </ButtonToolbar>
