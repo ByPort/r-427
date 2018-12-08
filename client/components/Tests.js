@@ -92,9 +92,6 @@ class Tests extends React.Component {
     }
 
     stopTimer() {
-        // this.setState({
-        //     elapsedTime: 0
-        // });
         clearInterval(this.timer);
     }
 
@@ -148,7 +145,7 @@ class Tests extends React.Component {
             <div>
                 <Navbar>
                     <Nav>
-                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
                     </Nav>
                 </Navbar>
                 <PageHeader>{testNames[this.props.testID] + ' '}<small>Регистрация</small></PageHeader>
@@ -199,7 +196,7 @@ class Tests extends React.Component {
             <div>
                 <Navbar>
                     <Nav>
-                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
                     </Nav>
                 </Navbar>
                 <PageHeader>{testNames[this.props.testID] + ' '}<small>Времени осталось: {secToMin(this.maxTime - this.state.elapsedTime.toFixed())}</small></PageHeader>
@@ -221,7 +218,7 @@ class Tests extends React.Component {
             <div>
                 <Navbar>
                     <Nav>
-                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
                     </Nav>
                 </Navbar>
                 <PageHeader>
@@ -274,7 +271,7 @@ class Tests extends React.Component {
             <div>
                 <Navbar>
                     <Nav>
-                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                        <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
                     </Nav>
                 </Navbar>
                 <h1>Неизвестная ошибка.</h1>
