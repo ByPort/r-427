@@ -37,7 +37,7 @@ class Content extends React.Component {
             case 'FAQ': return <FAQ />;
             case 'LEARNING': return <Learning />;
             case 'PURPOSE': return <Purpose />;
-            case 'TACTICS': return <Tacitcs />;
+            case 'TACTICS': return <TechData />;
             case 'DESCRIPTION': return <Description />;
             case 'SOFTWARE': return <Software />;
             case 'WORK': return <Work />;

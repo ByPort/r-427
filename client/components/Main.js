@@ -25,10 +25,6 @@ import '../assets/g3.jpg';
 import '../assets/g4.jpg';
 import '../assets/g5.jpg';
 import '../assets/g6.jpg';
-import '../assets/g7.jpg';
-import '../assets/g8.jpg';
-import '../assets/g9.jpg';
-import '../assets/g10.jpg';
 
 class Main extends React.Component {
     constructor(props) {
@@ -89,8 +85,7 @@ class Main extends React.Component {
             <div>
                 <Header />
                 <Row>
-                    <Col xs={1} sm={1} md={1} lg={1} className="sidebar">Sidebar</Col>
-                    <Col xs={10} sm={10} md={10} ls={10}>
+                    <Col xs={12} sm={12} md={12} ls={12}>
                         <div>
                             <PageHeader>Главное меню</PageHeader>
                             <div>
@@ -106,7 +101,7 @@ class Main extends React.Component {
                             <PageHeader>Галерея</PageHeader>
                             <div className="carousel slide multi-item-carousel" id="theCarousel">
                             <div className="carousel-inner">
-                                {new Array(10).fill(0).map((e, i) => (
+                                {new Array(6).fill(0).map((e, i) => (
                                     <div key={i} className={i == 0 ? ' item active' : 'item'}>
                                       <div className="col-xs-4"><a href={'#' + i}><img src={`img/g${i + 1}.jpg`} className="img-responsive"/></a></div>
                                     </div>
@@ -121,7 +116,7 @@ class Main extends React.Component {
                                 </Modal.Header>
                                 <Modal.Body>
                                     <Carousel indicators={false} onSelect={() => this.setState({activeIndex: this.state.activeIndex < 9 ? this.state.activeIndex + 1 : 0})} activeIndex={this.state.activeIndex} slide={false} className='carousel-secondary'>
-                                        {new Array(10).fill(0).map((e,i) => {
+                                        {new Array(6).fill(0).map((e,i) => {
                                             return (
                                                 <Carousel.Item className='text-center' key={i}>
                                                     <div className='flex'>
@@ -137,7 +132,6 @@ class Main extends React.Component {
                             <Footer />
                         </div>
                     </Col>
-                    <Col xs={1} sm={1} md={1} ls={1} className="sidebar">Sidebar</Col>
                 </Row>
             </div>
         );

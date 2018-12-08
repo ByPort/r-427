@@ -13,22 +13,28 @@ const About = (props) => (
     <div>
         <Navbar>
             <Nav>
-                <NavItem eventKey={1} onClick={() => props.navigate('MAIN')}>Главное меню</NavItem>
+                <NavItem eventKey={1} onClick={() => props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
             </Nav>
         </Navbar>
-        <PageHeader>О программе</PageHeader>
-        <p>Данный программный продукт предназначен для подготовки обучающихся к самостоятельной работе на радиорелейной станции Р-427.</p>
-        <ul>
-            <li>Год разработки: 2017 г. </li>
-            <li>Версия: v1.0</li>
-            <li>.NET Framework v4.6.1</li>
-        </ul>
-        <h4>Минимальные системные требования к ПЭВМ:</h4>
-        <ul>
-            <li>Частота процессора: 1 ГГц;</li>
-            <li>Оперативная память: 1024 Мб;</li>
-            <li>Операционная система: Windows 7, 8, 10.</li>
-        </ul>
+        <div style={{fontSize: '1.5em', marginTop: '20px'}}>
+        <p>Данный программный комплекс позволяет в несколько раз уменьшить время изучения принципа работы автоматической телефонной станции и может заметно увеличить уровень подготовки личного состава подразделений войск связи, а также совершенствовать образовательный процесс при подготовке специалистов войск связи.</p>
+        <p>Данный раздел помощи поможет в освоении данного программного комплекса.
+        Для ознакомления с тем или иным разделом, выберите интересующий Вас раздел из списка. Удачи!</p>
+        </div>
+        <div>
+            <Navbar>
+                <Nav className="docs-nav">
+                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Руководство по установке и удалению</NavItem>
+                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Обучающая программа</NavItem>
+                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Главная страница</NavItem>
+                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Раздел "Теория"
+</NavItem>
+                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Раздел "Контроль знаний"</NavItem>
+                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Раздел "Обучение"</NavItem>
+                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>О программа</NavItem>
+                </Nav>
+            </Navbar>
+        </div>
     </div>
 )
 

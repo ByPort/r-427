@@ -43,7 +43,7 @@ class Docs extends React.Component {
                 <div>
                     <Navbar>
                         <Nav>
-                            <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}>Главное меню</NavItem>
+                            <NavItem eventKey={1} onClick={() => this.props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
                         </Nav>
                     </Navbar>
                 </div>
@@ -52,9 +52,9 @@ class Docs extends React.Component {
                         <Nav className="docs-nav">
                             <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Назначение</NavItem>
                             <NavItem className="docs-item" eventKey={2} onClick={() => this.props.navigate('TACTICS')}>Тактико-технические характеристики</NavItem>
-                            <NavItem className="docs-item" eventKey={3} onClick={() => this.props.navigate('DESCRIPTION')}>Состав</NavItem>
+                            <NavItem className="docs-item" eventKey={3} onClick={() => this.props.navigate('WORK')}>Состав</NavItem>
                             <NavItem className="docs-item" eventKey={4} onClick={() => this.props.navigate('SOFTWARE')}>Программное обеспечение</NavItem>
-                            <NavItem className="docs-item" eventKey={5} onClick={() => this.props.navigate('WORK')}>Принцип работы</NavItem>
+                            <NavItem className="docs-item" eventKey={5} onClick={() => this.props.navigate('DESCRIPTION')}>Принцип работы</NavItem>
                         </Nav>
                     </Navbar>
                 </div>
