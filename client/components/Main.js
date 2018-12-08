@@ -108,49 +108,9 @@ class Main extends React.Component {
                                 {new Array(10).fill(0).map((e, i) => (
                                     <Carousel.Item key={i}>
                                         <img width={350} height={466} src={`img/g${i + 1}.jpg`} />
-                                        {/* <Carousel.Caption>
-                                        <h3>{`img/g${i + 1}.jpg`}</h3>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                        </Carousel.Caption> */}
                                     </Carousel.Item>
-                                    // <div key={i} className={i == 0 ? ' item active' : 'item'}>
-                                    //   <div className="col-xs-4"><a href={'#' + i}><img src={`img/g${i + 1}.jpg`} className="img-responsive"/></a></div>
-                                    // </div>
                                 ))}
-                                {/* <Carousel.Item>
-                                    <img width={900} height={500} alt="900x500" src="/carousel.png" />
-                                    <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img width={900} height={500} alt="900x500" src="/carousel.png" />
-                                    <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img width={900} height={500} alt="900x500" src="/carousel.png" />
-                                    <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item> */}
-                            </Carousel>
-                            {/* <div className="carousel slide multi-item-carousel" id="theCarousel">
-                                <div className="carousel-inner">
-                                    {new Array(10).fill(0).map((e, i) => (
-                                        <div key={i} className={i == 0 ? ' item active' : 'item'}>
-                                        <div className="col-xs-4"><a href={'#' + i}><img src={`img/g${i + 1}.jpg`} className="img-responsive"/></a></div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <a className="left carousel-control" href="#theCarousel" data-slide="prev"><i className="glyphicon glyphicon-chevron-left"></i></a>
-                                <a className="right carousel-control" href="#theCarousel" data-slide="next"><i className="glyphicon glyphicon-chevron-right"></i></a>
-                            </div> */}
-                            
+                            </Carousel>                            
                             <Footer />
                         </div>
                     </Col>

@@ -92,9 +92,6 @@ class Tests extends React.Component {
     }
 
     stopTimer() {
-        // this.setState({
-        //     elapsedTime: 0
-        // });
         clearInterval(this.timer);
     }
 
