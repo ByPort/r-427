@@ -25,6 +25,12 @@ export const pages = {
     WORK: 'WORK',
     TECHDATA: 'TECHDATA',
     TECHDESCRIPTION: 'TECHDESCRIPTION',
+    ABOUT_PROG: 'ABOUT_PROG',
+    DEPLOY: 'DEPLOY',
+    LEARNING_PROG: 'LEARNING_PROG',
+    SECTION_LEARNING: 'SECTION_LEARNING',
+    SECTION_MAIN: 'SECTION_MAIN',
+    SECTION_THEORY: 'SECTION_THEORY',
 }
 
 export const docsCategoryNames = ['Назначение и состав', 'Тактико-технические данные', 'Описание конструкции', 'Программное обеспечение', 'Принцип работы']

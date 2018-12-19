@@ -19,6 +19,12 @@ import Software from './Software'
 import Work from './Work'
 import TechData from './TechData'
 import TechDescription from './TechDescription'
+import AboutProg from './AboutProg'
+import Deploy from './Deploy'
+import LearningProg from './LearningProg'
+import SectionLearning from './SectionLearning'
+import SectionMain from './SectionMain'
+import SectionTheory from './SectionTheory'
 import { questions } from '../questions'
 
 class Content extends React.Component {
@@ -28,6 +34,7 @@ class Content extends React.Component {
     }
 
     switchContent(currentPage) {
+        if (window.__debug__) debugger;
         switch(currentPage.pageName) {
             //case 'MAIN': return <Main />
             case 'RESULTS': return <Results />;
@@ -43,6 +50,12 @@ class Content extends React.Component {
             case 'WORK': return <Work />;
             case 'TECHDATA': return <TechData />;
             case 'TECHDESCRIPTION': return <TechDescription />;
+            case 'ABOUT_PROG': return <AboutProg />;
+            case 'DEPLOY': return <Deploy />;
+            case 'LEARNING_PROG': return <LearningProg />;
+            case 'SECTION_LEARNING': return <SectionLearning />;
+            case 'SECTION_MAIN': return <SectionMain />;
+            case 'SECTION_THEORY': return <SectionTheory />;
             default: return <Main />
         }
     }

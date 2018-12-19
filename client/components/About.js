@@ -24,14 +24,14 @@ const About = (props) => (
         <div>
             <Navbar>
                 <Nav className="docs-nav">
-                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Руководство по установке и удалению</NavItem>
-                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Обучающая программа</NavItem>
-                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Главная страница</NavItem>
-                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Раздел "Теория"
+                <NavItem className="docs-item" eventKey={1} onClick={() => props.navigate('DEPLOY')}>Руководство по установке и удалению</NavItem>
+                <NavItem className="docs-item" eventKey={2} onClick={() => props.navigate('LEARNING_PROG')}>Обучающая программа</NavItem>
+                <NavItem className="docs-item" eventKey={3} onClick={() => props.navigate('SECTION_MAIN')}>Главная страница</NavItem>
+                <NavItem className="docs-item" eventKey={4} onClick={() => props.navigate('SECTION_THEORY')}>Раздел "Теория"
 </NavItem>
-                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Раздел "Контроль знаний"</NavItem>
-                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>Раздел "Обучение"</NavItem>
-                <NavItem className="docs-item" eventKey={1} onClick={() => this.props.navigate('PURPOSE')}>О программа</NavItem>
+                <NavItem className="docs-item" eventKey={5}>Раздел "Контроль знаний"</NavItem>
+                <NavItem className="docs-item" eventKey={6} onClick={() => props.navigate('SECTION_LEARNING')}>Раздел "Обучение"</NavItem>
+                <NavItem className="docs-item" eventKey={7} onClick={() => props.navigate('ABOUT_PROG')}>О программе</NavItem>
                 </Nav>
             </Navbar>
         </div>

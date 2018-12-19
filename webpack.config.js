@@ -57,7 +57,7 @@ module.exports = {
         // }),
         new HtmlWebpackPlugin({
             inject: false,
-            title: 'Р-427',
+            title: 'АТС ФМ',
             // favicon: './client/assets/images/icon.ico',
             template: './client/templates/template.ejs',
             appMountId: 'root'
