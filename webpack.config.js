@@ -57,7 +57,7 @@ module.exports = {
         // }),
         new HtmlWebpackPlugin({
             inject: false,
-            title: 'АТС ФМ',
+            title: 'ATS FM',
             // favicon: './client/assets/images/icon.ico',
             template: './client/templates/template.ejs',
             appMountId: 'root'
