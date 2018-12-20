@@ -55,8 +55,8 @@ class AboutProg extends React.Component {
                 </Navbar>
                 <PageHeader>О программе</PageHeader>
                 <div className="greater">
-                    <p><span className="bold">Разработчик:</span> Драгунов Сергей</p>
-                    <p><span className="bold">Версия:</span> v1.0b</p>
+                    <p><span className="bold">Разработчик:</span> Драгунов Сергей Игоревич</p>
+                    <p><span className="bold">Версия:</span> 1.0</p>
                     <p><span className="bold">Год выпуска:</span> 2019 г.</p>
                     <p><span className="bold">Оборудование:</span> АТС ФМ</p>
                     <p>

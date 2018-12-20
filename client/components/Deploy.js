@@ -78,10 +78,8 @@ class Deploy extends React.Component {
                     <ol>
                     <li>
                     Запустить установщик программы, для этого запустить 'ATS-FM_Setup_1_0_0.exe'. Выполнить установку согласно пунктам установщика.
-                    <div className="flex">
-                    <img src="img/de1.jpg" alt=""/>
-                    <img src="img/de2.jpg" alt=""/>
-                    </div>
+                    <img className="pic1" src="img/de1.jpg" alt=""/>
+                    <img className="pic1" src="img/de2.jpg" alt=""/>
                     </li>
                     <li>
                     По завершению установки появится возможность сразу запустить обучающую программу, либо зайти в папку у становленным программным комплексом и запустить в ней файл 'ATS-FM.exe'(По-умолчанию, полный путь к файлу с программой следующий: 'C:\Program Files\ATS-FM\ATS-FM.exe' )
@@ -94,10 +92,8 @@ class Deploy extends React.Component {
                     <ul>
                     <li>
                     Зайти в папку у становленным программным комплексом и запустить в ней файл 'Uninstall ATS-FM.exe'(По-умолчанию, полный путь к файлу с программой следующий: 'C:\Program Files\ATS-FM\Uninstall ATS-FM.exe' ) и действовать далее согласно пунктам мастера по установке.
-                    <div className="flex">
-                    <img src="img/de4.jpg" alt=""/>
-                    <img src="img/de5.jpg" alt=""/>
-                    </div>
+                    <img className="pic1" src="img/de4.jpg" alt=""/>
+                    <img className="pic1" src="img/de5.jpg" alt=""/>
                     </li>
                     </ul>
                 </div>

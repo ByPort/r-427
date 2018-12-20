@@ -26,6 +26,8 @@ import SectionLearning from './SectionLearning'
 import SectionMain from './SectionMain'
 import SectionTheory from './SectionTheory'
 import Issues from './Issues'
+import Prepare from './Prepare'
+import Usage from './Usage'
 import { questions } from '../questions'
 
 class Content extends React.Component {
@@ -58,6 +60,8 @@ class Content extends React.Component {
             case 'SECTION_MAIN': return <SectionMain />;
             case 'SECTION_THEORY': return <SectionTheory />;
             case 'ISSUES': return <Issues />;
+            case 'PREPARE': return <Prepare />;
+            case 'USAGE': return <Usage />;
             default: return <Main />
         }
     }

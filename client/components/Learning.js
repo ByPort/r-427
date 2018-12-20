@@ -50,8 +50,8 @@ const Learning = (props) => (
         <div>
             <Navbar>
                 <Nav className="docs-nav">
-                    <NavItem className="docs-item" eventKey={1} onClick={() => props.navigate('PURPOSE')}>Порядок подготовки АТС к применению</NavItem>
-                    <NavItem className="docs-item" eventKey={2} onClick={() => props.navigate('TACTICS')}>Порядок обучения использования АТС</NavItem>
+                    <NavItem className="docs-item" eventKey={1} onClick={() => props.navigate('PREPARE')}>Порядок подготовки АТС к применению</NavItem>
+                    <NavItem className="docs-item" eventKey={2} onClick={() => props.navigate('USAGE')}>Порядок обучения использования АТС</NavItem>
                     <NavItem className="docs-item" eventKey={3} onClick={() => props.navigate('ISSUES')}><span style={{lineHeight: 1}}>Возможные неисправности и способы их устранения</span></NavItem>
                 </Nav>
             </Navbar>

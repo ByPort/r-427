@@ -1,11 +1,24 @@
 @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    // background: #FF0000;
+}
+
 html, body, main
     height: 100%;
 
 .app
     min-height: 100%;
     //background-color: #f0f0f0
+
+.font-italic
+    font-style: italic;
 
 .pic1
     max-width: 100%;
@@ -196,8 +209,9 @@ carousel-item(height) {
 .app
     background-image: url(assets/camouflage_texture1732.jpg);
     background-position: center;
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     color: white;
 
 .gallery {

@@ -32,6 +32,8 @@ export const pages = {
     SECTION_MAIN: 'SECTION_MAIN',
     SECTION_THEORY: 'SECTION_THEORY',
     ISSUES: 'ISSUES',
+    PREPARE: 'PREPARE',
+    USAGE: 'USAGE',
 }
 
 export const docsCategoryNames = ['Назначение и состав', 'Тактико-технические данные', 'Описание конструкции', 'Программное обеспечение', 'Принцип работы']

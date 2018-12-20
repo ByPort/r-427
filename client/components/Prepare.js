@@ -13,10 +13,8 @@ import { docsCategoryNames as categoryNames } from '../constants';
 
 require('smoothscroll-polyfill').polyfill();
 
-import '../assets/teory.jpg';
 
-
-class SectionTheory extends React.Component {
+class Prepare extends React.Component {
     constructor(props) {
         super(props);
         this.state = { activeKey: this.props.subPageName || 0 }
@@ -49,20 +47,26 @@ class SectionTheory extends React.Component {
                         <NavItem className="nav-main-menu" eventKey={2} onClick={() => this.props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
                     </Nav>
                 </Navbar>
-                <PageHeader>Раздел "Теория"</PageHeader>
+                <PageHeader>Порядок подготовки АТС к применению</PageHeader>
                 <div className="greater">
-                    <p>Скриншот раздела теории</p>
-                    <img className="pic1" src="img/teory.jpg"/>
-                    <p>
-                        <span className="bold">Назначение основных элементов:</span>
-                    </p>
-                    <ul>
-                    <li>подраздел «Назначение и состав» предназначен для ознакомления с назначением АТС ФМ с основными её составными частями.</li>
-                    <li>подраздел «Тактико-технические данные предназначен для ознакомления с тактико-техническими характеристиками АТС ФМ.</li>
-                    <li>подраздел «Описание конструкции» предназначен для ознакомления с логической структурой АТС ФМ.</li>
-                    <li>подраздел «Программное обеспечание» предназначен для ознакомления с архитектурой программной настройки АТС ФМ.</li>
-                    <li>подраздел «Принцип работы» предназначен для ознакомления с основным принципом работы автоматической телефонной станции.</li>
-                    </ul>
+                <p>Перед включением электропитания АТС проверить, что напряжение минус 60В на УГП</p>
+
+<p>или ПС-60 (или другом источнике) в норме.</p>
+
+<p>Включение электропитания АТС производится в следующей последовательности:</p>
+<ol>
+<li>1) на блоках БВ включить каналы, подающие электропитание на стативы АТС;</li>
+
+<li>2) включить блоки БПП в кассетах;</li>
+
+<li>3) включить блоки БПП в кассетах;</li>
+
+<li>4) включить блоки БПУ в кассетах;</li>
+
+<li>5) включить каналы блоков БВ, подающие напряжение минус 60В аналоговое на блоки БАЛ1, БАЛ2, САК1-САК4 и БФСЛ1.</li>
+</ol>
+
+<p>Выключение электропитания АТС производится в обратном порядке</p>
                 </div>
             </div>
         );
@@ -76,4 +80,4 @@ export default connect(
             dispatch(navigate(pageName, subPageName, anchor))
         }
     })
-)(SectionTheory);
+)(Prepare);
