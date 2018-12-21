@@ -43,7 +43,7 @@ class Prepare extends React.Component {
             <div>
                 <Navbar>
                     <Nav>
-                        <NavItem className="nav-prev-section" eventKey={1} onClick={() => this.props.navigate('ABOUT')}><span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Предыдущий раздел</NavItem>
+                        <NavItem className="nav-prev-section" eventKey={1} onClick={() => this.props.navigate('LEARNING')}><span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Предыдущий раздел</NavItem>
                         <NavItem className="nav-main-menu" eventKey={2} onClick={() => this.props.navigate('MAIN')}><span className="glyphicon glyphicon-home" aria-hidden="true"></span>Главное меню</NavItem>
                     </Nav>
                 </Navbar>
