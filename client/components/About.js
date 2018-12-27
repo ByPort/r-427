@@ -27,9 +27,8 @@ const About = (props) => (
                 <NavItem className="docs-item" eventKey={1} onClick={() => props.navigate('DEPLOY')}>Руководство по установке и удалению</NavItem>
                 <NavItem className="docs-item" eventKey={2} onClick={() => props.navigate('LEARNING_PROG')}>Обучающая программа</NavItem>
                 <NavItem className="docs-item" eventKey={3} onClick={() => props.navigate('SECTION_MAIN')}>Главная страница</NavItem>
-                <NavItem className="docs-item" eventKey={4} onClick={() => props.navigate('SECTION_THEORY')}>Раздел "Теория"
-</NavItem>
-                <NavItem className="docs-item" eventKey={5}>Раздел "Контроль знаний"</NavItem>
+                <NavItem className="docs-item" eventKey={4} onClick={() => props.navigate('SECTION_THEORY')}>Раздел "Теория"</NavItem>
+                <NavItem className="docs-item" eventKey={5} onClick={() => props.navigate('SECTION_CONTROL')}>Раздел "Контроль знаний"</NavItem>
                 <NavItem className="docs-item" eventKey={6} onClick={() => props.navigate('SECTION_LEARNING')}>Раздел "Обучение"</NavItem>
                 <NavItem className="docs-item" eventKey={7} onClick={() => props.navigate('ABOUT_PROG')}>О программе</NavItem>
                 </Nav>

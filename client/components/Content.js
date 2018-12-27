@@ -28,6 +28,7 @@ import SectionTheory from './SectionTheory'
 import Issues from './Issues'
 import Prepare from './Prepare'
 import Usage from './Usage'
+import Control from './Control'
 import { questions } from '../questions'
 
 class Content extends React.Component {
@@ -62,6 +63,7 @@ class Content extends React.Component {
             case 'ISSUES': return <Issues />;
             case 'PREPARE': return <Prepare />;
             case 'USAGE': return <Usage />;
+            case 'SECTION_CONTROL': return <Control />;
             default: return <Main />
         }
     }

@@ -34,6 +34,7 @@ export const pages = {
     ISSUES: 'ISSUES',
     PREPARE: 'PREPARE',
     USAGE: 'USAGE',
+    SECTION_CONTROL: 'SECTION_CONTROL',
 }
 
 export const docsCategoryNames = ['Назначение и состав', 'Тактико-технические данные', 'Описание конструкции', 'Программное обеспечение', 'Принцип работы']
